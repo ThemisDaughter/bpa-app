@@ -1,7 +1,40 @@
-html,
-body {
+:root {
+  --brand-color-100: #edf2f7;
+  --brand-color-200: #a9c1d8;
+  --brand-color-300: #5484b2;
+  --brand-color-400: #2a4259;
+  --brand-color-500: #080d11;
+--contrast-color-100: #FFF6DE;
+--contrast-color-200: #F8BC7C;
+--contrast-color-300: #F18119;
+--contrast-color-400: #793605;
+--contrast-color-500: #1f0800;
+--highlight-color: #F2C318;
+--highlight-color-100: #fff1bd;
+--font-size-regular: 1rem;
+--font-size-small: 0.8rem;
+--font-size-large: 1.2rem;
+--title-xs: 1.5;
+--title-sm: 2.5rem;
+--title-md: 3rem;
+--title-lg: 3.5rem;
+--title-xl: 5rem;
+
+--mg-sm: 6px;
+--mg-md: 6px calc(2vw + 6px);
+}
+
+/* how do I set media query breakpoints? */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   padding: 0;
   margin: 0;
+  background-color: var(--brand-color-500);
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -13,4 +46,37 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  font-size: var(--title-sm);
+  font-family: 'roboto slab';
+  font-weight: bold;
+}
+main {
+  padding: 0 6px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 640px) {
+  main {
+    padding: 0 calc(5vw + 6px);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  h1{
+    font-size: var(--title-md)
+  }
+}
+@media screen and (min-width: 1200px) {
+  h1{
+    font-size: var(--title-lg)
+  }
+  main {
+    padding: 0 calc(7vw + 6px);
+  }
 }
