@@ -1,4 +1,4 @@
 import { useWindowDimensions } from './useWindowDimensions';
-import { useAnimationProperties } from './useAnimationProperties'
+import { useScrollTransform } from './useScrollTransform'
 
-export { useWindowDimensions, useAnimationProperties };
+export { useWindowDimensions, useScrollTransform };

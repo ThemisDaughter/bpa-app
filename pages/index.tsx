@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       <header className={ styles.navbar }>
         <Navbar />
       </header>
-      <main className={styles.main}>
+      <main>
         <TitleSection />
         <OverviewSection />
       </main>

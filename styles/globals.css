@@ -20,8 +20,11 @@
 --title-lg: 3.5rem;
 --title-xl: 5rem;
 
---mg-sm: 6px;
---mg-md: 6px calc(2vw + 6px);
+--content-mg-sm: 6px;
+--content-mg-md: 6px calc(2vw + 6px);
+--outer-margin-sm: 0 6px;
+--outer-margin-pad: 0 calc(5vw + 6px);
+--outer-margin-lg: 0 calc(7vw + 6px);
 }
 
 /* how do I set media query breakpoints? */
@@ -31,6 +34,7 @@
 }
 
 html, body {
+  /* overflow-x: hidden; */
   padding: 0;
   margin: 0;
   background-color: var(--brand-color-500);
@@ -53,18 +57,13 @@ h1 {
   font-family: 'roboto slab';
   font-weight: bold;
 }
-main {
-  padding: 0 6px;
-}
 
 .hidden {
   display: none;
 }
 
 @media screen and (min-width: 640px) {
-  main {
-    padding: 0 calc(5vw + 6px);
-  }
+
 }
 
 @media screen and (min-width: 900px) {
@@ -76,7 +75,5 @@ main {
   h1{
     font-size: var(--title-lg)
   }
-  main {
-    padding: 0 calc(7vw + 6px);
-  }
+ 
 }

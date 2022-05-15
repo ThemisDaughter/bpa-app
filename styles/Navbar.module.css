@@ -1,21 +1,19 @@
-.logo{
-  color: var(--brand-color-300);
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1.5rem;
-}
 .ctaBtn{
-  border: solid var(--brand-color-400) 1px;
-  background: var(--highlight-color-100);
-  background: linear-gradient(45deg, var(--highlight-color) 0%, var(--highlight-color-100) 120%);
+  border: solid var(--brand-color-100) 1.5px;
+  background-color: transparent;
   padding: 0.5rem 1.5rem;
-  color: var(--brand-color-400);
+  color: var(--brand-color-100);
   border-radius: 1rem;
   text-transform: uppercase;
 }
 .logo {
   display: grid;
-  place-items: center;
+  padding: var(--content-mg-sm);
   grid-area: logo;
+  color: var(--brand-color-300);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5rem;
+  align-items: center;
 }
 .menu {
   display: flex;
@@ -36,7 +34,6 @@
 .cta {
   display: grid;
   place-items: center;
-  margin-left: -30px;
   grid-area: cta;
 }
 .navbar {
@@ -44,6 +41,9 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas: 'logo cta menu';
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #080d11d0 100%); 
+  padding-bottom: 60px;
+
 }
 .link {
   padding: 4px;
@@ -61,8 +61,24 @@
 }
   .navbar {
     grid-template-areas: 'logo menu cta';
+    padding: var(--outer-margin-pad);
+    padding-bottom: 60px;
+
   }
   .dropdown {
     display: none;
+  }
+}
+@media screen and (min-width: 900px){
+  .logo {
+    padding: var(--content-mg-md);
+  }
+  
+}
+@media screen and (min-width: 1200px){
+  .navbar  {
+    padding: var(--outer-margin-lg);
+    padding-bottom: 60px;
+
   }
 }

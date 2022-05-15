@@ -2,7 +2,7 @@ import styles from 'styles/TitleSection.module.css';
 import Image from 'next/image';
 import heroImage from 'assets/images/phone-test.png';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import { useWindowDimensions, useAnimationProperties } from 'tools/hooks'
+import { useWindowDimensions, useScrollTransform } from 'tools/hooks'
 import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 
@@ -18,14 +18,23 @@ const TitleSection = () => {
 //   useEffect(() => { 
 //     setWidth(innerWidth!);
 //     setHeight(innerHeight!);
-//   }, [innerWidth, innerHeight])
-  const { scale_phone, rotate_phone, move_phone } = useAnimationProperties();
+//   }, [])
+
  
 
 //   // animation properties
-//     const scale_phone = useTransform(scrollY, [300, height*2], [6.5, 1.2]);
-//     const move_phone = useTransform(scrollY, [300, height*2], [-300, 0]);
-//     const rotate_phone = useTransform(scrollY, [300, height*2], [0, -20]);
+    const scale_phone = useScrollTransform([300, '200vh'], [6.5, 1.2]);
+    const move_phone = useScrollTransform([300, '200vh'], [-300, 0]);
+    const rotate_phone = useScrollTransform([300, '200vh'], [0, -20]);
+  
+  console.log(scale_phone)
+  
+  // useScrollTransform is a custom hook to adapt the scroll transforms to the viewport height. uses the same syntax as framer-motions useTransform
+  // but using scrollY as default. Takes arrays as arguments, first array with offset from top of container and
+  // end of scroll animation, and the array with the values for the transforms. All values can be numbers or strings relative to vh/vw,
+  // example: useScrollTransform(['100vh', '300vh'], ['-20vw', 20]) will start viewport-height from the top (of container, yet to be implemented)
+  // and end 4viewport heights from the top or 3 viewport heights from the top and transform property from negative 1/5 of the viewport width to 20px
+
 
   console.log('return of the useTransform hook for scaling', scale_phone)
   return (
@@ -59,9 +68,9 @@ const TitleSection = () => {
             y: '200px'
          }}
          className={styles.imageContainer}>
-         {/* <div className={styles.heroImage}> */}
+          {/* <div className={styles.heroImage}>  */}
            <Image src={ heroImage } layout='fill' objectFit='contain' alt="instagram story" ></Image>
-         {/* </div> */}
+          {/* </div>  */}
          </motion.div>
       </div>
     </section>
