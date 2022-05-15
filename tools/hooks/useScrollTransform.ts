@@ -3,12 +3,8 @@ import { useEffect, useState } from 'react';
 import { useTransform, useViewportScroll } from 'framer-motion';
 import { useWindowDimensions } from '.';
 
-interface Props {
-  array1: (string | number)[],
-  array2: (string | number)[]
-}
 
-export const useScrollTransform = (array1: (string | number)[], array2: (string | number)[])  => {
+export const useScrollTransform = (array1: (string | number)[], array2: (string | number)[]) => {
   const { innerWidth, innerHeight } = useWindowDimensions();
   const { scrollY } = useViewportScroll();
 
@@ -40,7 +36,6 @@ export const useScrollTransform = (array1: (string | number)[], array2: (string 
     // one and a half: translate container position to viewport position with boundingClientRect
     // second, put both arrays into a useTransform hook
 
-    // lastly, fix the typescript error!
-    // @ts-ignore;
+   
   return useTransform(scrollY, replaceWithPixels(array1), replaceWithPixels(array2));
 }
