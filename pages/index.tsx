@@ -15,23 +15,20 @@ const Home: NextPage = () => {
     animate='animate'
       exit='exit'
     >
+    
       <Head>
         <title>Brand Placement - Werbung durch Social Media</title>
         <meta name="description" content="Brand Placement, Social media Marketing" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className={ styles.navbar }>
-        <Navbar />
-      </header>
       <main>
         <TitleSection />
         <OverviewSection />
       </main>
 
-      <footer className={styles.footer}>
-       
-      </footer>
+     
     </motion.div>
+     
   )
 }
 

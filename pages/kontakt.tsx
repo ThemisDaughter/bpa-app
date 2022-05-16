@@ -9,13 +9,9 @@ const kontakt = () => {
       animate='animate'
       exit='exit'
     >
-      kontakt
-      <Link href='/'>
-        <a>
-
-      zurück
-        </a>
-      </Link>
+      
+      einige informationen
+     
     </motion.div>
   )
 }

@@ -4,12 +4,18 @@ import { motion } from 'framer-motion';
 import { homeNavbarVariants } from 'animations/animationVariants';
 import { BiMenu } from 'react-icons/bi';
 
+interface Props {
+  view: string;
+  page: string
+}
 
-const Navbar = () => {
+const Navbar = ({ view, page }:Props) => {
 // animate the dropdown with gsap here. guess: have a useEffect, set clickHandler, have the menu appear, (then I don't know how to toggle it back)
-
+  console.log(page);
+  console.log(view);
   return (
     // container, 3 parts, center 
+    <header className={styles.header}>
       <motion.nav
         variants={homeNavbarVariants}
         initial='hidden'
@@ -42,6 +48,7 @@ const Navbar = () => {
           </button>
       </div>
       </motion.nav>
+      </header>
   )
 }
 
